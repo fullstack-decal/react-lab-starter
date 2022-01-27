@@ -6,11 +6,10 @@ const Category = ({ name, link, background }) => {
     console.log(name)
     return (
         <Box>
-            <Box width={500} height={500} bgImage={forest} bgRepeat="no-repeat" bgSize="cover" bgPos="center" rounded='lg' maxH={300} maxW={300}>
-                <Box align="center" color="white">
+            <Box width={400} h={400} bgImage={forest} bgRepeat="no-repeat" bgSize="cover" bgPos="center" rounded='lg' maxH={500} maxW={500}>
+                <Box align="center" color="white" pt="35%" fontSize={42} fontWeight={700}>
                     {name} 
                 </Box>
-
             </Box>
         </Box>
     )
