@@ -1,3 +1,9 @@
+# Fullstack Dev React Lab
+
+This project is based on patagonia.com/home/. The original can be found
+at https://web.archive.org/web/20220112093640/patagonia.com/home/.
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
