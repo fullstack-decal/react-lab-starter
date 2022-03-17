@@ -5,9 +5,12 @@ import { Search2Icon, HamburgerIcon, PlusSquareIcon, ExternalLinkIcon, ChevronDo
 import mountains from '../Images/mountains.png'
 
 const FrontPage = () => {
+    // TODO: add React hook for whether Modal is opened.
     const [ opened, setOpen ] = useState(false);
+    // TODO: add React hook keeping track of times Modal has been opened.
     const [ count, setCount ] = useState(0);
 
+    // TODO: add useEffect() that changes document title based on whether Modal is open.
     useEffect(() => {
         if (opened) {
             document.title = "Patagonia - Learn More";
@@ -16,98 +19,53 @@ const FrontPage = () => {
         }
       });
     
-
+    
+    // TODO: event handler for when button has been clicked to open modal
     const buttonOpen = (e) => {
         setOpen(true);
         setCount(count + 1);
     }
     
+    // TODO: event handler fro when button has been clicked to close modal
     const buttonClose = (e) => {
         setOpen(false);
     }
 
+    // TODO: complete the Front Page of the page (the area contained by the mountain background)
     return (
-        <Box height="1000px" align="center" bgImage={mountains} bgRepeat="no-repeat" bgSize="cover" bgPos="center">
-            <Box color="white" fontWeight={700} height={90} bgColor="none">
-                <Flex height={90} pt={10} justifyContent="center" alignItems="center">
-                    <Box width="13%" fontSize="32px">
-                        patagonia
-                    </Box>
-                    <Spacer/>
-                    <Box ml="200px" px="50px" mt={4}>
-                        Shop
-                    </Box>
-                    <Box px="50px" mt={4}>
-                        Activism
-                    </Box>
-                    <Box px="50px" mt={4}>
-                        Sports
-                    </Box>
-                    <Box pl="50px" mt={4}>
-                        Stories
-                    </Box>
-                    <Spacer/>
-                    <Spacer/>
-                    <Box px="20px" mt={4}>
-                        <Search2Icon h={6} w={6} />
-                    </Box>
-                    <Box px="20px" mt={4}>
-                        <PlusSquareIcon h={6} w={6} />
-                    </Box>
-                    <Box px="20px" mt={4}>
-                    <IconButton
-                        onClick={buttonOpen}
-                        colorScheme='clear'
-                        aria-label='Explore'
-                        icon={<HamburgerIcon h={6} w={6} />}
-                        />    
-                    </Box>
-                    <Spacer/>
+        <Box height="50%" align="center" bgImage={mountains} bgRepeat="no-repeat" bgSize="cover" bgPos="center">
+            <Box color="white" fontWeight={700} bgColor="none">
+                <Flex justifyContent="center" alignItems="center">
+                    {/* TODO: Add the navbar, including the Search2Icon and PlusSquareIcon */}
+                    {/* TODO: Create a clickable HamburgerIcon to open the Modal onClick adjacent to the two icons from above */}
                 </Flex>
             </Box>
-            <Box paddingTop={260} color="white" fontWeight={700} fontSize="3.8rem">
-                Keep the Tongass Roadless
-            </Box>
-            <Box width="45%" color="white" fontSize="1.3rem">
-                Make your voice heard about restoring the Roadless Rule protection in the Tongass National Forest.    
-            </Box>
-
+            {/* TODO: Add Box components for
+                1. "Keep the Tongass Roadless" (color="white" fontWeight={700} fontSize="3.8rem"), 
+                2. "Make your voice heard..." (fontWeight={700)
+                text blocks centered side-by-side */}
+            
             <Box w="100%" textAlign="center" mt={10}>
-                <Button w="200px" h="50px" mx={5} colorScheme='white' color='black' rounded="xl" variant="solid" bgColor="white" fontWeight={700}>
-                    <ExternalLinkIcon color="black" /><Spacer/>Watch the Video
-                </Button>
-                <Button w="200px" h="50px" mx={5}variant='outline' rounded="xl" color="white" fontWeight={700}>
-                    Submit a Comment
-                </Button>
+                {/* TODO: Add a button containing ExternalLinkIcon that has the next "Watch the Video" */}
+                
+                {/* TODO: Add a button for "Submit a Comment" */}
+
             </Box>
-            <Modal isOpen={opened} onClose={buttonClose} size="6xl">
+            {/* TODO: add necessary fields for modal open and close */}
+            <Modal size="6xl">
                 <ModalOverlay />
                 <ModalContent>
                 <ModalHeader>Login</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                    <Box float="left" >
-                        Company
-                    </Box>
-                    <Box float="right" alignItems="center">
-                        Customer Service
-                    </Box>
-                    <br/>
-                    <Box>
-                        This modal has been clicked {count} times!
-                    </Box>
+                    {/* TODO: add modal counter value here */}
                 </ModalBody>
                 <ModalFooter>
-                    <Button colorScheme='blue' mr={3} onClick={buttonClose}>
-                    Close
-                    </Button>
-                    <Button variant='ghost'>Go to Product</Button>
+                    {/* TODO: add a button to close the modal here */}
                 </ModalFooter>
                 </ModalContent>
             </Modal>
-            <Box mt={300}>
-                <ChevronDownIcon w={8} h={8} color="white"/>
-            </Box>
+            {/* TODO: Add and format the ChevronDownIcon at the bottom of the front page */}
         </Box>
     )
 }
