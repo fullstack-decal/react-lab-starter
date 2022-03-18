@@ -6,30 +6,16 @@ import mountains from '../Images/mountains.png'
 
 const FrontPage = () => {
     // TODO: add React hook for whether Modal is opened.
-    const [ opened, setOpen ] = useState(false);
+
     // TODO: add React hook keeping track of times Modal has been opened.
-    const [ count, setCount ] = useState(0);
 
     // TODO: add useEffect() that changes document title based on whether Modal is open.
-    useEffect(() => {
-        if (opened) {
-            document.title = "Patagonia - Learn More";
-        } else {
-            document.title = "Patagonia - Home";
-        }
-      });
+
     
     
     // TODO: event handler for when button has been clicked to open modal
-    const buttonOpen = (e) => {
-        setOpen(true);
-        setCount(count + 1);
-    }
     
     // TODO: event handler fro when button has been clicked to close modal
-    const buttonClose = (e) => {
-        setOpen(false);
-    }
 
     // TODO: complete the Front Page of the page (the area contained by the mountain background)
     return (
